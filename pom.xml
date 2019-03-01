@@ -40,11 +40,21 @@
 		<developer>
 			<name>Ying Jiang</name>
 		</developer>
+		<developer>
+			<name>Wanxiang Xing</name>
+		</developer>
 	</developers>
-	<url>http://code.google.com/p/ictclas4j/</url>
+	<url>https://github.com/yujiaao/ictclas4j</url>
 	<scm>
-		<url>http://code.google.com/p/ictclas4j/source/browse/</url>
-		<connection>scm:svn:http://ictclas4j.googlecode.com/svn/trunk/</connection>
-		<developerConnection>scm:svn:https://ictclas4j.googlecode.com/svn/trunk/</developerConnection>
+		<url>https://github.com/yujiaao/ictclas4j</url>
+		<connection>scm:git:https://github.com/yujiaao/ictclas4j</connection>
+		<developerConnection>scm:git:https://github.com/yujiaao/ictclas4j</developerConnection>
 	</scm>
+<!--
+	<distributionManagement>
+		<repository>
+			<id>sslldev</id>
+		</repository>
+	</distributionManagement>
+-->
 </project>

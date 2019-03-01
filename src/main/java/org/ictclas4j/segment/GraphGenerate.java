@@ -136,7 +136,9 @@ public class GraphGenerate {
 	/**
 	 * 生成二叉图表,每个节点表示相邻两个词组的耦合关系,如:说@的确
 	 * 
-	 * @param sgs
+	 * @param seg
+	 * @param biDict
+	 * @param dict
 	 */
 	public static SegGraph biGenerate(SegGraph seg,Dictionary dict,Dictionary biDict) {
 		SegGraph segGraph = null;

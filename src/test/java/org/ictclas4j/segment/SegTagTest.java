@@ -3,11 +3,21 @@ package org.ictclas4j.segment;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+import org.ictclas4j.bean.SegResult;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class SegTagTest
 {
-	/**
+    @Test
+    public void split() throws Exception {
+		String src = "日本早在1923年的关东大地震后就着手制定校舍安全政策，1995年阪神大地震后开始实施“校舍补强计划”，对不具备抗御7级地震的校舍进行加固，2008年中国汶川地震后，日本政府迅速启动了面向45万所公立中小学的“五年补强计划”。";
+		SegResult res = new SegTag(1).split(src);
+		assertTrue(res.getMrList().size()>0);
+    }
+
+    /**
 	 * Tokenizing this text causes an endless loop: 月份牌
 	 * @see <a href="http://code.google.com/p/ictclas4j/issues/detail?id=13">Issue 13</a>
 	 */
