@@ -2,16 +2,16 @@ package org.ictclas4j.utility;
 
 /**
  * 数字相关的工具类
- * 
+ *
  * @author sinboy
  * @since 2007.5.23
  */
 public class NumUtil {
 	/**
 	 * 字符串的所有单个字符都是数字但本身并不是一个有意义的数字
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param word word
+	 * @return true
 	 */
 	public static boolean isNumStrNotNum(String word) {
 		if (word != null) {
@@ -25,10 +25,10 @@ public class NumUtil {
 
 	/**
 	 * 是否是数字、连字符的情况，如：３-4月
-	 * 
-	 * @param pos
-	 * @param str
-	 * @return
+	 *
+	 * @param pos int
+	 * @param str string
+	 * @return true
 	 */
 	public static boolean isNumDelimiter(int pos, String str) {
 		if (str != null && str.length() > 1) {

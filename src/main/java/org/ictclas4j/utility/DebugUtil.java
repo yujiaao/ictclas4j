@@ -13,16 +13,16 @@ import org.ictclas4j.bean.SegResult;
 
 /**
  * 日志记录工具类
- * 
+ *
  * @author sinboy
- * 
+ *
  */
 public class DebugUtil {
 
 	/**
 	 * 把分词过程中生成的中间结果输出到HMTL文件中
-	 * 
-	 * @param snList
+	 *
+	 * @param sr SegResult
 	 */
 	public static void output2html(SegResult sr) {
 		if (sr != null) {
@@ -30,7 +30,7 @@ public class DebugUtil {
 				String html = "<html><head><title>ictclas4j分词结果</title></head>";
 				html += "<body bgcolor=\"#CCFF99\">";
 				html += sr.toHTML();
-				html += "</body></html>"; 
+				html += "</body></html>";
 				writeTxtFile("output\\sr.html", html, false);
 			} catch (IOException e) {
 			}
@@ -76,8 +76,8 @@ public class DebugUtil {
 
 	/**
 	 * 把分词过程中生成的中间结果输出到GUI图形界面上
-	 * 
-	 * @param snList
+	 *
+	 * @param sr SegResult
 	 */
 	public static void output2gui(SegResult sr) {
 		if (sr != null) {
@@ -87,15 +87,15 @@ public class DebugUtil {
 
 	/**
 	 * 写文本文件.如果写入数据中有换行符"\n"的话,自动在写入文件中换中
-	 * 
+	 *
 	 * @param fileName
 	 *            文件路径
 	 * @param txt
 	 *            要写入的文件信息
 	 * @param isAppend
 	 *            是否以追加的方式写入
-	 * @return
-	 * @throws IOException
+	 * @return true
+	 * @throws IOException io error
 	 */
 	public static boolean writeTxtFile(String fileName, String txt, boolean isAppend) throws IOException {
 		FileWriter fw = null;

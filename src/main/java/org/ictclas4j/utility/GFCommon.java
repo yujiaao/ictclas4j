@@ -1,6 +1,6 @@
 /*
  * Created on 2005-1-10
- * 
+ *
  * TODO To change the template for this generated file go to Window -
  * Preferences - Java - Code Style - Code Templates
  */
@@ -15,7 +15,7 @@ public class GFCommon {
 	/**
 	 * 把一个数组的数据COPY到另外一个数组中指定的位置。 如果maxlen大于source数组的长度，则在source数组后补0补足够maxlen位；
 	 * 如果maxlen小于source数组的长度，则把source数组后面多出的几位去掉，剩够maxlen位
-	 * 
+	 *
 	 * @param d
 	 *            destination 数组
 	 * @param s
@@ -55,7 +55,7 @@ public class GFCommon {
 
 	/**
 	 * 从一个数组中的指定位置开始，向后取出len个值； 如果from为负值，则从指定位置向前取出len个值
-	 * 
+	 *
 	 * @param src
 	 *            源数组
 	 * @param from
@@ -116,7 +116,7 @@ public class GFCommon {
 
 	/**
 	 * 得到一个对象的类名
-	 * 
+	 *
 	 * @param obj
 	 *            对象
 	 * @return 对象的类名
@@ -147,9 +147,9 @@ public class GFCommon {
 
 	/**
 	 * 字节数组转成长整形。按高位在前进行转换。
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b byte[]
+	 * @return long
 	 */
 	public static long bytes2long(byte[] b) {
 
@@ -158,11 +158,11 @@ public class GFCommon {
 
 	/**
 	 * 字节数组转成长整形
-	 * 
-	 * @param b
+	 *
+	 * @param b byte
 	 * @param isHighFirst
 	 *            是否高位在前
-	 * @return
+	 * @return long
 	 */
 	public static long bytes2long(byte[] b, boolean isHighFirst) {
 		long result = 0;
@@ -244,9 +244,9 @@ public class GFCommon {
 
 	/**
 	 * 格式化IP地址,把219.11.33.44转化成如下形式:219011033044
-	 * 
-	 * @param ip
-	 * @return
+	 *
+	 * @param ip ip adress
+	 * @return string
 	 */
 	public static String formatIP(String ip) {
 		String result = null;
@@ -305,8 +305,8 @@ public class GFCommon {
 	 * 得到系统信息。
 	 * <p>
 	 * 比如：操作系统，JAVA虚拟机等
-	 * 
-	 * @return
+	 *
+	 * @return string
 	 */
 	public static String getSystemInfo() {
 		String result = "os.name:" + System.getProperty("os.name") + "\n"
@@ -323,7 +323,7 @@ public class GFCommon {
 
 	/**
 	 * 获取数据库的连接。
-	 * 
+	 *
 	 * @param driver
 	 *            数据库驱动参数
 	 * @param url
@@ -332,8 +332,6 @@ public class GFCommon {
 	 *            数据库登陆用户名
 	 * @param pwd
 	 *            登陆密码
-	 * @param conn
-	 *            数据库连接
 	 * @return 数据库连接
 	 */
 	public static Connection getConn(String driver, String url,
@@ -359,11 +357,11 @@ public class GFCommon {
 
 	/**
 	 * 取得Class文件所在的路径。
-	 * 
+	 *
 	 * @param className
 	 *            类名
 	 * @return Class文件所在的路径，不包括Class文件本身的包路径。比如：com.gftech.web.Test,返回的路径格式如下/E:/gftech/project/web/bin/
-	 * 
+	 *
 	 */
 	public static String getClassPath(String className) {
 
@@ -379,11 +377,11 @@ public class GFCommon {
 
 	/**
 	 * 取得Class文件所在的路径。
-	 * 
+	 *
 	 * @param objName
 	 *            对象名称
 	 * @return Class文件所在的路径，不包括Class文件本身的包路径。比如：com.gftech.web.Test,返回的路径格式如下/E:/gftech/project/web/bin/
-	 * 
+	 *
 	 */
 	public static String getClassPath(Object objName) {
 
@@ -393,7 +391,7 @@ public class GFCommon {
 
 	/**
 	 * 返回Jsp应用程序中WEB-INF的路径。
-	 * 
+	 *
 	 * @param classPath
 	 *            WEB-INF/classes的路径，格式为/E:/web/myjsp/WEB-INF/classes/
 	 * @return WEB-INF的路径，格式为E:\web\myjsp\WEB-INF\
@@ -415,7 +413,7 @@ public class GFCommon {
 
 	/**
 	 * 产生一个不大于seed的随机数
-	 * 
+	 *
 	 * @param seed
 	 *            产生随机数的种子
 	 * @return 随机数
@@ -434,12 +432,12 @@ public class GFCommon {
 
 	/**
 	 * 生成一个在min到max之间的随机数
-	 * 
+	 *
 	 * @param min
 	 *            最小值
 	 * @param max
 	 *            最大值
-	 * @return
+	 * @return int
 	 */
 	public static int random(int min, int max) {
 		int rd = random(max);
@@ -452,9 +450,9 @@ public class GFCommon {
 
 	/**
 	 * 得到数组中0第一次数组b中出现的位置
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b byte[]
+	 * @return position
 	 */
 	public static int getZeroIndex(byte[] b) {
 		if (b != null) {
@@ -468,9 +466,9 @@ public class GFCommon {
 
 	/**
 	 * 数组中是否含有0值
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b  byte
+	 * @return true contains
 	 */
 	public static boolean isHasZero(byte[] b) {
 		if (b == null)
@@ -482,7 +480,7 @@ public class GFCommon {
 		return false;
 	}
 
-	 
+
 
 	public static int getUnsigned(byte b) {
 		if (b > 0)

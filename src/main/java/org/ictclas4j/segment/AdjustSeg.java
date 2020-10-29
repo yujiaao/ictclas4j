@@ -10,15 +10,15 @@ import org.ictclas4j.utility.Utility;
 
 /**
  * 分词调整
- * 
+ *
  * @author sinboy
  * @since 2007.6.1
  */
 public class AdjustSeg {
 	/**
 	 * 对初次分词结果进行调整，主要是对时间、日期、数字等进行合并或拆分
-	 * 
-	 * @return
+	 * @param sgs array
+	 * @return array
 	 */
 	public static ArrayList<SegNode> firstAdjust(ArrayList<SegNode> sgs) {
 
@@ -156,11 +156,11 @@ public class AdjustSeg {
 
 	/**
 	 * 对分词结果做最终的调整，主要是人名的拆分或重叠词的合并
-	 * 
-	 * @param optSegPath
-	 * @param personTagger
-	 * @param placeTagger
-	 * @return
+	 *
+	 * @param optSegPath Array
+	 * @param personTagger PosTagger
+	 * @param placeTagger PosTagger
+	 * @return Array of SegNode
 	 */
 	public static ArrayList<SegNode> finaAdjust(ArrayList<SegNode> optSegPath, PosTagger personTagger,
 			PosTagger placeTagger) {

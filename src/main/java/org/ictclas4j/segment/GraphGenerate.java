@@ -12,13 +12,14 @@ import org.ictclas4j.utility.Utility;
 
 public class GraphGenerate {
 	/**
-	 * 全切分,生成切分图.即找出所有可能的词组  
-	 * 
-	 * @param atoms
-	 * @return
+	 * 全切分,生成切分图.即找出所有可能的词组
+	 *
+	 * @param atoms Array of atom
+	 * @param dict dict
+	 * @return SegGraph
 	 */
 	public static SegGraph generate(ArrayList<Atom> atoms,Dictionary dict) {
-		SegGraph segGraph = null; 
+		SegGraph segGraph = null;
 		SegNode sn = null;
 		Atom atom = null;
 
@@ -114,12 +115,12 @@ public class GraphGenerate {
 								sg = new SegNode(i, j,wis.get(0).getHandle(),totalFreq , word);
 							else
 								sg = new SegNode(i, j, 0,totalFreq , word);
-						
+
 							segGraph.insert(sg, true);
 						}
 						if (flag)
 							i++;
-						if (j < atoms.size()) { 
+						if (j < atoms.size()) {
 							String word2 = atoms.get(j).getWord();
 							word += word2;
 						} else
@@ -135,10 +136,11 @@ public class GraphGenerate {
 
 	/**
 	 * 生成二叉图表,每个节点表示相邻两个词组的耦合关系,如:说@的确
-	 * 
-	 * @param seg
-	 * @param biDict
-	 * @param dict
+	 *
+	 * @param seg seggraph
+	 * @param biDict dict
+	 * @param dict dict
+	 * @return seggraph
 	 */
 	public static SegGraph biGenerate(SegGraph seg,Dictionary dict,Dictionary biDict) {
 		SegGraph segGraph = null;
@@ -148,8 +150,8 @@ public class GraphGenerate {
 		if (seg != null && dict != null && biDict != null) {
 			segGraph = new SegGraph();
 			ArrayList<SegNode> sgs = seg.getSnList();
-			SegGraph.NextElementIndex nextEleIndex=seg.new NextElementIndex(); 
-			
+			SegGraph.NextElementIndex nextEleIndex=seg.new NextElementIndex();
+
 			//nextEleIndex
 			for (int i = 0; sgs != null && i < sgs.size(); i++) {
 				SegNode sg = sgs.get(i);
@@ -186,7 +188,7 @@ public class GraphGenerate {
 					sg2.setCol(wordIndex);
 					sg2.setWord(twoWords);
 					sg2.setPos(sg.getPos());
-					sg2.setValue(value); 
+					sg2.setValue(value);
 					segGraph.insert(sg2, false);
 				}
 			}

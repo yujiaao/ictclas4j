@@ -15,10 +15,10 @@ import org.ictclas4j.utility.Utility.TAG_TYPE;
 
 /**
  * 未登录词的处理
- * 
+ *
  * @author sinboy
  * @since 2007.5.17 updated
- * 
+ *
  */
 public class PosTagger {
   private Dictionary coreDict;
@@ -99,10 +99,10 @@ public class PosTagger {
 
   /**
    * 从经过初分的结果中，找出构成人名、地名或其它词的未登陆词
-   * 
-   * @param segGraph
-   * @param coreDict
-   * @return
+   *
+   * @param segGraph segGraph
+   * @param sns SegNode
+   * @return true
    */
   public boolean recognition(SegGraph segGraph, ArrayList<SegNode> sns) {
 
@@ -146,15 +146,8 @@ public class PosTagger {
 
   /**
    * 对所有的词性进行标记
-   * 
-   * @param frs
-   *          初次切分的结果
-   * @pararm startIndex 开始进行词性标记的位置
-   * @param coreDict
-   *          核心词典库
-   * @param unknownDict
-   *          未登陆词典库
-   * @return 下一个需要开始的位置
+   *
+   * @param sns 数组
    */
   public void posTag(ArrayList<SegNode> sns) {
     if (sns != null && coreDict != null && unknownDict != null && context != null) {
@@ -466,25 +459,25 @@ public class PosTagger {
 
   /**
    * 人名模式匹配
-   * 
+   *
    * <pre>
-   * 
-   *          BBCD 343 0.003606 
-   *          BBC 2 0.000021 
-   *          BBE 125 0.001314 
-   *          BBZ 30 0.000315 
-   *          BCD 62460 0.656624 
-   *          BEE 0 0.000000 
-   *          BE 13899 0.146116 
-   *          BG 869 0.009136 
-   *          BXD 4 0.000042 
-   *          BZ 3707 0.038971 
-   *          CD 8596 0.090367 
-   *          EE 26 0.000273 
-   *          FB 871 0.009157 
+   *
+   *          BBCD 343 0.003606
+   *          BBC 2 0.000021
+   *          BBE 125 0.001314
+   *          BBZ 30 0.000315
+   *          BCD 62460 0.656624
+   *          BEE 0 0.000000
+   *          BE 13899 0.146116
+   *          BG 869 0.009136
+   *          BXD 4 0.000042
+   *          BZ 3707 0.038971
+   *          CD 8596 0.090367
+   *          EE 26 0.000273
+   *          FB 871 0.009157
    *          Y 3265 0.034324
    *          XD 926 0.009735
-   *          
+   *
    *          The person recognition patterns set
    *          BBCD:姓+姓+名1+名2;
    *          BBE: 姓+姓+单名;
@@ -578,7 +571,7 @@ public class PosTagger {
 
   /**
    * 地名模式匹配
-   * 
+   *
    */
   private void placeRecognize(SegGraph segGraph, ArrayList<SegNode> sns, Dictionary coreDict) {
     if (segGraph != null && coreDict != null) {
@@ -727,7 +720,7 @@ public class PosTagger {
 
   /**
    * 标记出最佳词性
-   * 
+   *
    * @param sns
    */
   private void tagBest(ArrayList<SegNode> sns) {

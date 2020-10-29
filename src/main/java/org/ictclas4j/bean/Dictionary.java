@@ -100,12 +100,12 @@ public class Dictionary {
 
   /**
    * 从词典表中加载词条.共6768个大的数据块(包括5个非汉字字符),每个大数据块包括若干个小数据块, 每个小数据块为一个词条,该数据块中每个词条都是共一个字开头的.
-   * 
+   *
    * @param filename
    *          核心词典文件名
    * @param isReset
    *          是否要重置
-   * @return
+   * @return true
    */
   public boolean load(String filename, boolean isReset) {
     File file;
@@ -173,9 +173,9 @@ public class Dictionary {
 
   /**
    * 保存词典表.如果有修改的词条，则先要对词典表进行更新才能把内容写入文件
-   * 
-   * @param filename
-   * @return
+   *
+   * @param filename string
+   * @return true
    */
   public boolean save(String filename) {
     File file;
@@ -283,14 +283,14 @@ public class Dictionary {
 
   /**
    * 向词典库中添加词条.添加时只是先把词条放到修改表中，保存时才真正把添加的词条写入词典库中
-   * 
+   *
    * @param word
    *          词
    * @param handle
    *          句柄
    * @param frequency
    *          频度
-   * @return
+   * @return true
    */
   public boolean addItem(String word, int handle, int frequency) {
 
@@ -451,13 +451,13 @@ public class Dictionary {
 
   /**
    * 用2分法查询源词典库,看是否已存在
-   * 
+   *
    * @param index
    *          大数据块对应的下标（所有同一个字开头的词条为一个大数据块）
    * @param res
    *          去掉头一个字后剩余的部分
-   * @param handle
-   * @return
+   * @param handle 句柄，用来标识词的词性
+   * @return int
    */
   public int findInOriginalTable(int index, String res, int handle) {
     int result = -1;
@@ -498,10 +498,10 @@ public class Dictionary {
 
   /**
    * 从修改表中查询是否存在,并返回它的位置坐标
-   * 
-   * @param index
-   * @param res
-   * @param handle
+   *
+   * @param index int
+   * @param res string
+   * @param handle 句柄，用来标识词的词性
    * @return 位置坐标
    */
   protected int findInModifyTable(int index, String res, int handle) {
@@ -553,11 +553,9 @@ public class Dictionary {
 
   /**
    * 预处理,先把词前后的空格去掉
-   * 
-   * @param word
-   * @param wordRet
-   * @param isAdd
-   * @return
+   *
+   * @param word string
+   * @return preword
    */
   public Preword preProcessing(String word) {
     Preword result = null;
@@ -604,9 +602,9 @@ public class Dictionary {
 
   /**
    * 从词典库中找出最匹配的一个
-   * 
-   * @param word
-   * @return
+   *
+   * @param word String
+   * @return WordItem
    */
   public WordItem getMaxMatch(String word) {
     if (word != null) {

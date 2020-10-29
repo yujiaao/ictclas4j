@@ -20,12 +20,12 @@ import java.util.LinkedHashMap;
 
 /**
  * 和字符串相关的常用操作
- * 
+ *
  * @author SINBOY
  * @version V1.1
  */
 public class GFString {
-	private static final HashMap<String, String> map_hex2bin = new HashMap<String, String>(16); 
+	private static final HashMap<String, String> map_hex2bin = new HashMap<String, String>(16);
 	{
 		map_hex2bin.put("0", "0000");
 		map_hex2bin.put("1", "0001");
@@ -42,9 +42,9 @@ public class GFString {
 		map_hex2bin.put("C", "1100");
 		map_hex2bin.put("D", "1101");
 		map_hex2bin.put("E", "1110");
-		map_hex2bin.put("F", "1111");		
+		map_hex2bin.put("F", "1111");
 	}
-	
+
 	public final static HashMap<String, String> map_bin2hex = new HashMap<String, String>(16);
 	{
 		map_bin2hex.put("0000", "0");
@@ -67,7 +67,7 @@ public class GFString {
 
 	private final static LinkedHashMap<String, Integer> bopoMap = new LinkedHashMap<String, Integer>();
 	{
-		bopoMap.put("a", 1);	
+		bopoMap.put("a", 1);
 		bopoMap.put("a", -20319);
 		bopoMap.put("ai", -20317);
 		bopoMap.put("an", -20304);
@@ -466,11 +466,11 @@ public class GFString {
 		bopoMap.put("zuo", -10254);
 		bopoMap.put("", -10246);
 	}
-	
-	
+
+
 	/**
 	 * 得到一个十六进制字符的二进制字符串表示形式
-	 * 
+	 *
 	 * @param hex
 	 *            十六进制字符
 	 * @return 二进制字符串
@@ -515,12 +515,12 @@ public class GFString {
 
 	/**
 	 * 把字符串转化成指定长度的数组
-	 * 
+	 *
 	 * @param str
 	 *            要转换的字符串
 	 * @param len
 	 *            指定的转换后的字节类型的数据的总长度
-	 * @param end
+	 * @param start
 	 *            字节数据的最后一个字节所填的数据的值
 	 * @return 字节数组
 	 */
@@ -544,12 +544,12 @@ public class GFString {
 
 	/**
 	 * 返回按指定编码方式编码的字符串
-	 * 
+	 *
 	 * @param bArray
 	 *            字节数组
 	 * @param charsetName
 	 *            字符集
-	 * @return
+	 * @return string
 	 */
 	public static String getEncodedString(byte[] bArray, String charsetName) {
 		String ch = null;
@@ -568,7 +568,7 @@ public class GFString {
 
 	/**
 	 * 把表示一个数的十六进制的字符串转化成十进制的数
-	 * 
+	 *
 	 * @param hex
 	 *            十六进制字符串
 	 * @return 十进制的整数
@@ -593,7 +593,7 @@ public class GFString {
 
 	/**
 	 * 把字符串转化成固定长的字符串。如果不够指定的长度，在前面添加指定的字符； 如果大于指定的长度，把后面多出的去掉。
-	 * 
+	 *
 	 * @param str
 	 *            要转换的字符串
 	 * @param len
@@ -622,7 +622,7 @@ public class GFString {
 
 	/**
 	 * 把一个二进制字符串的转化成一个整数
-	 * 
+	 *
 	 * @param bs
 	 *            二进制字符串
 	 * @return 二进制字符串表示的值
@@ -739,9 +739,9 @@ public class GFString {
 
 	/**
 	 * 判断一个字符串是否是数字
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str src
+	 * @return true
 	 */
 	public static boolean isNumeric(String str) {
 		if (str != null) {
@@ -760,9 +760,9 @@ public class GFString {
 
 	/**
 	 * 判断字符串是否全是汉字
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return true
 	 */
 	public static boolean isAllChinese(String str) {
 		if (str != null) {
@@ -775,7 +775,7 @@ public class GFString {
 					e.printStackTrace();
 					if (str.length() * 2 == str.getBytes().length)
 						return true;
-					
+
 				}
 			}
 		}
@@ -785,9 +785,9 @@ public class GFString {
 
 	/**
 	 * 判断字符串是否全不是汉字
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str src
+	 * @return true
 	 */
 	public static boolean isNoChinese(String str) {
 		if (str != null) {
@@ -809,9 +809,9 @@ public class GFString {
 
 	/**
 	 * 是否是字母
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return true
 	 */
 	public static boolean isLetter(String str) {
 		if (str != null) {
@@ -836,7 +836,7 @@ public class GFString {
 
 	/**
 	 * 把一个整数转化成8位二进制字符串的表示形式
-	 * 
+	 *
 	 * @param value
 	 *            0--256之间的整数
 	 * @return 长度为8的二进制字符串
@@ -856,7 +856,7 @@ public class GFString {
 
 	/**
 	 * 把表示数字含义的字符串转你成整形
-	 * 
+	 *
 	 * @param str
 	 *            要转换的字符串
 	 * @return 如果是有意义的整数，则返回此整数值。否则，返回-1。
@@ -887,7 +887,7 @@ public class GFString {
 
 	/**
 	 * 在一个字符串中取出指定的子字符串/
-	 * 
+	 *
 	 * @param str
 	 *            字符串
 	 * @param begin
@@ -924,8 +924,9 @@ public class GFString {
 
 	/**
 	 * 把字节数组转化成十六进制的字符串
-	 * 
-	 * @param bs
+	 *
+	 * @param b byte
+	 * @return String
 	 */
 	public static String bytes2hex(byte[] b) {
 		String result = "";
@@ -944,9 +945,9 @@ public class GFString {
 
 	/**
 	 * 把UNICODE编码的字符串转化成汉字编码的字符串
-	 * 
-	 * @param hexString
-	 * @return
+	 *
+	 * @param hexString hex
+	 * @return String
 	 */
 	public static String unicode2gb(String hexString) {
 		StringBuffer sb = new StringBuffer();
@@ -968,9 +969,9 @@ public class GFString {
 
 	/**
 	 * 把汉字转化成UNICODE编码的字符串
-	 * 
-	 * @param gbString
-	 * @return
+	 *
+	 * @param gbString gb2312
+	 * @return utf8
 	 */
 	public static String gb2unicode(String gbString) {
 		String result = "";
@@ -995,7 +996,7 @@ public class GFString {
 
 	/**
 	 * 如果字符串的长度没有达到指定的长度，则在字符串前加“0”补够指定的长度
-	 * 
+	 *
 	 * @param src
 	 *            原先的字符串
 	 * @param len
@@ -1016,7 +1017,7 @@ public class GFString {
 
 	/**
 	 * 在指定字符串插入到源字符串的指定位置
-	 * 
+	 *
 	 * @param src
 	 *            源字符串
 	 * @param insertStr
@@ -1052,9 +1053,9 @@ public class GFString {
 
 	/**
 	 * 把相临的两个字符对换，字符串长度为奇数时最后加“F”
-	 * 
-	 * @param src
-	 * @return
+	 *
+	 * @param src String
+	 * @return String
 	 */
 	public static String interChange(String src) {
 		String result = null;
@@ -1075,12 +1076,12 @@ public class GFString {
 
 	/**
 	 * 把数组按指定的编码方式转化成字符串
-	 * 
+	 *
 	 * @param b
 	 *            源数组
 	 * @param encoding
 	 *            编码方式
-	 * @return
+	 * @return string
 	 */
 	public static String bytes2str(byte[] b, String encoding) {
 		String result = null;
@@ -1106,10 +1107,11 @@ public class GFString {
 
 	/**
 	 * 把一个字符串按指定的长度分割
-	 * 
+	 *
 	 * @param intervalLen
 	 *            间隔长度
-	 * @return
+	 * @param src src
+	 * @return String[]
 	 */
 	public static String[] split(String src, int intervalLen) {
 		String[] result = null;
@@ -1133,9 +1135,9 @@ public class GFString {
 
 	/**
 	 * 把字节数组转化成十六进制的字符串
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b byte
+	 * @return string
 	 */
 	public static String bytes2hexstr(byte[] b) {
 		return bytes2hexstr(b, false);
@@ -1144,12 +1146,12 @@ public class GFString {
 	/**
 	 * 把字节数组转化成十六进制的字符串
 	 * <p>
-	 * 
-	 * @param b
+	 *
+	 * @param b byte
 	 * @param highBitFirst
 	 *            true:高位优先，即输出的十六进制字符串是从Byte数组的最大下标开始的
 	 *            false:低们优先，即输出的十六进制字符串是从Byte数组的最小下标0开始的
-	 * @return
+	 * @return String
 	 */
 	public static String bytes2hexstr(byte[] b, boolean highBitFirst) {
 		String result = null;
@@ -1180,9 +1182,10 @@ public class GFString {
 
 	/**
 	 * 把字节数组转化成十六进制的字符串
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b bytes
+	 * @param len int
+	 * @return string
 	 */
 	public static String bytes2hexstr(byte[] b, int len) {
 		String result = null;
@@ -1203,9 +1206,9 @@ public class GFString {
 
 	/**
 	 * 把十六进制字符串转化成字节数组 如果长度不是偶数的话，前面加“0”
-	 * 
-	 * @param hexstr
-	 * @return
+	 *
+	 * @param hexstr hex
+	 * @return byte[]
 	 */
 	public static byte[] hexstr2bytes(String hexstr) {
 		byte[] b = null;
@@ -1277,10 +1280,10 @@ public class GFString {
 
 	/**
 	 * 把整数转换成指定长度的字符串 如果指定长度小于整数的字符串长度，则只取前面LEN个字符。 如果LEN小0，则返回整数的字符串表示型式
-	 * 
-	 * @param value
-	 * @param len
-	 * @return
+	 *
+	 * @param value int
+	 * @param len int
+	 * @return String
 	 */
 	public static String int2str(int value, int len) {
 		String result = "" + value;
@@ -1300,9 +1303,9 @@ public class GFString {
 
 	/**
 	 * 把十六进制数转化成字节
-	 * 
-	 * @param hex
-	 * @return
+	 *
+	 * @param hex hex
+	 * @return byte
 	 */
 	public static byte hex2byte(String hex) {
 		byte b = 0;
@@ -1335,9 +1338,9 @@ public class GFString {
 
 	/**
 	 * 把字节转换成十六进制字符串，固定为两个字符长度
-	 * 
-	 * @param b
-	 * @return
+	 *
+	 * @param b byte
+	 * @return String
 	 */
 	public static String byte2hex(byte b) {
 		String result = null;
@@ -1353,9 +1356,9 @@ public class GFString {
 	 * 比如把“汉#＃012０１２YＹ”转成“汉##012012YY”
 	 * <p>
 	 * 对全角的空格处理还有问题
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string
 	 */
 	public static String quan2ban(String str) {
 		String result = null;
@@ -1385,9 +1388,9 @@ public class GFString {
 
 	/**
 	 * 用UTF-16BE的编码方式把含有半角的字符串转成全角字符串
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string
 	 */
 	public static String ban2quan(String str) {
 		String result = null;
@@ -1416,9 +1419,9 @@ public class GFString {
 
 	/**
 	 * 用GBK编码进行全角转半角
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string
 	 */
 	public static String quan2banGBK(String str) {
 		String result = null;
@@ -1456,9 +1459,9 @@ public class GFString {
 	 * 从每个字节判起，如果一个字节的值不大于0X7F，则它是Ascii码的字符。进入下一个判断。
 	 * <p>
 	 * 如果一个字节的值大于0X81，且紧跟着它的下一个字节的值在0x40--0xFE之间，则是汉字或全角字符
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string
 	 */
 	public static String ban2quanGBK(String str) {
 		String result = null;
@@ -1493,9 +1496,9 @@ public class GFString {
 
 	/**
 	 * 去掉字符串中的空白符
-	 * 
-	 * @param s
-	 * @return
+	 *
+	 * @param s string
+	 * @return string
 	 */
 	public static String removeSpace(String s) {
 		String rs = null;
@@ -1517,13 +1520,13 @@ public class GFString {
 
 	/**
 	 * 对字符串中的空格进行格式化,去掉开头和最后的空格,把字符之间的空格缩减为1个.
-	 * <p>
-	 * 比如:<空格><空格>我是一个人<空格><空格><空格>中国人<空格>大学生<空格><空格>
-	 * <p>
-	 * 结果应该为:我是一个人<空格>中国人<空格>大学生
-	 * 
-	 * @param src
-	 * @return
+	 * <pre>
+	 * 比如:&lt;空格&gt;&lt;空格&gt;我是一个人&lt;空格&gt;&lt;空格&gt;&lt;空格&gt;中国人&lt;空格&gt;大学生&lt;空格&gt;&lt;空格&gt;
+	 *
+	 * 结果应该为:我是一个人&lt;空格&gt;中国人&lt;空格&gt;大学生
+	 * </pre>
+	 * @param src string
+	 * @return string
 	 */
 	public static String formatSpace(String src) {
 		String result = null;
@@ -1546,9 +1549,9 @@ public class GFString {
 
 	/**
 	 * 7-BIT编码 把ASCII码值最高位为0的字符串进行压缩转换成8位二进制表示的字符串
-	 * 
-	 * @param src
-	 * @return
+	 *
+	 * @param src string
+	 * @return string
 	 */
 	public static String encode7bit(String src) {
 		String result = null;
@@ -1592,7 +1595,7 @@ public class GFString {
 
 	/**
 	 * 对7-BIT编码进行解码
-	 * 
+	 *
 	 * @param src
 	 *            十六进制的字符串，且为偶数个
 	 * @return 源字符串
@@ -1633,9 +1636,9 @@ public class GFString {
 	 *                                     2.是数字
 	 *                                     3.以&quot;13&quot;开头
 	 * </pre>
-	 * 
-	 * @param msg
-	 * @return
+	 *
+	 * @param msg string
+	 * @return true
 	 */
 	public static boolean isMobileNo(String msg) {
 		// msg = quan2ban(msg);
@@ -1653,14 +1656,14 @@ public class GFString {
 	 * <pre>
 	 *                                    是否是一个电话号码.
 	 *                                    首先做预处理,把转全角字符转成半角,并把非数字字符去掉,用空格替代
-	 *                                    
+	 *
 	 *                                    1.长度要至等于7,但不能超过12
 	 *                                    2.手机号是一个电话号码
 	 *                                    3.按空格分隔,长度大于等于3且小于等于12的数字字段至少有一个,且最大不超过2个
 	 * </pre>
-	 * 
-	 * @param msg
-	 * @return
+	 *
+	 * @param msg string
+	 * @return true
 	 */
 	public static boolean isTelNo(String msg) {
 		// msg = quan2banGBK(msg);
@@ -1693,19 +1696,19 @@ public class GFString {
 		return false;
 	}
 
-	 
-	 
-	 
+
+
+
 	/**
 	 * <pre>
 	 *                               得到指定位置前的非空格字符
 	 *                               比如：源字符串为:2室一厅，“室”前一个有效字符为2
 	 *                               源字符串为：2 室 一厅，“室”前一个有效字符为2
 	 * </pre>
-	 * 
-	 * @param msg
-	 * @param index
-	 * @return
+	 *
+	 * @param msg msg
+	 * @param index int
+	 * @return String
 	 */
 	public static String getAnteriorNotSpaceChar(String msg, int index) {
 		String ch = null;
@@ -1725,11 +1728,11 @@ public class GFString {
 	 * 按字符串长度的长短进行排序
 	 * <p>
 	 * 选用快速排序算法
-	 * 
-	 * @param list
+	 *
+	 * @param list array of string
 	 * @param long2short
 	 *            True:从长到短.False:从短到长
-	 * @return
+	 * @return array of string
 	 */
 	public static ArrayList<String> sortByLen(ArrayList<String> list, boolean long2short) {
 		ArrayList<String> rs = null;
@@ -1769,15 +1772,15 @@ public class GFString {
 
 	/**
 	 * 把指定位置指定长度的字符用新字符串替换掉
-	 * 
-	 * @param 源字符串
+	 *
+	 * @param src 源字符串
 	 * @param index
 	 *            替换字符串的开始下标
 	 * @param len
 	 *            替换的长度
 	 * @param newstr
 	 *            新字符串
-	 * @return
+	 * @return string
 	 */
 	public static String replace(String src, int index, int len, String newstr) {
 		String result = src;
@@ -1816,9 +1819,9 @@ public class GFString {
 
 	/**
 	 * 判断字符串是否是字母数字的
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str src
+	 * @return true
 	 */
 	public static boolean isAlphanumeric(String str) {
 		if (str != null) {
@@ -1840,9 +1843,9 @@ public class GFString {
 
 	/**
 	 * 去掉地名(市/区/县/乡/村)的后缀"市/区/县/乡/镇/村"
-	 * 
-	 * @param placename
-	 * @return
+	 *
+	 * @param placename name
+	 * @return String
 	 */
 	public static String removePlacenameSuffix(String placename) {
 		int index = -1;
@@ -1862,12 +1865,10 @@ public class GFString {
 
 	/**
 	 * 添加地名后缀(市/区/县/乡/村)的后缀"市/区/县/乡/镇/村"
-	 * 
-	 * @param placename
-	 * @param type
-	 *            地名类型 0:省 1:市 2:区 3:县
-	 * 
-	 * @return
+	 *
+	 * @param placename name
+	 * @param suffix     地名类型 0:省 1:市 2:区 3:县
+	 * @return string
 	 */
 	public static String addPlacenameSuffix(String placename, String suffix) {
 		int index = -1;
@@ -1886,10 +1887,10 @@ public class GFString {
 
 	/**
 	 * 比较两个字符串,看str1是否在str2前,按字母排序. 比如:abc是在adc之前
-	 * 
-	 * @param str1
-	 * @param str2
-	 * @return
+	 *
+	 * @param str1 string
+	 * @param str2 string
+	 * @return true
 	 */
 	public static boolean isBefore(String str1, String str2) {
 		boolean rs = false;
@@ -1918,13 +1919,13 @@ public class GFString {
 		return rs;
 	}
 
- 
+
 
 	/**
 	 * 是否是联通手机号码
-	 * 
-	 * @param sim
-	 * @return
+	 *
+	 * @param sim string
+	 * @return true
 	 */
 	public static boolean isUnicommMobile(String sim) {
 		boolean result = false;
@@ -1938,9 +1939,9 @@ public class GFString {
 
 	/**
 	 * 是否是联通手机号码
-	 * 
-	 * @param sim
-	 * @return
+	 *
+	 * @param sim string
+	 * @return true
 	 */
 	public static boolean isChinaMobile(String sim) {
 		boolean result = false;
@@ -1956,10 +1957,10 @@ public class GFString {
 
 	/**
 	 * 取得指定位置后面的紧邻的字符
-	 * 
-	 * @param str
-	 * @param index
-	 * @return
+	 *
+	 * @param str str
+	 * @param index int
+	 * @return string
 	 */
 	public static String getNextString(String str, int index) {
 		String rs = null;
@@ -1980,16 +1981,16 @@ public class GFString {
 
 	/**
 	 * 对字符串进行原子分隔,比如:解放军第101医院----解 放 军 第 1 0 1 医 院
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string[]
 	 */
-	public static String[] atomSplit(String str) {		
+	public static String[] atomSplit(String str) {
 		if (str==null) {return null;}
-		
+
 		String[] result = null;
 		int nLen=str.length();
-		result = new String[nLen];			
+		result = new String[nLen];
 		for (int i = 0; i < nLen; i++) {
 			result[i] = str.substring(i, i + 1);
 		}
@@ -2021,12 +2022,12 @@ public class GFString {
 
 	/**
 	 * 找到POS词性标记的位置
-	 * 
+	 *
 	 * @param str
 	 *            分词的字符串
 	 * @param pos
 	 *            字词标记
-	 * @return
+	 * @return int
 	 */
 	public static int findPos(String str, String pos) {
 		int result = -1;
@@ -2046,10 +2047,10 @@ public class GFString {
 
 	/**
 	 * 去掉词性标注，获取关键词
-	 * 
+	 *
 	 * @param str
 	 *            带词性标注的关键词,比如：团校/bs /sh
-	 * @return
+	 * @return String
 	 */
 	public static String getPOSKey(String str) {
 		if (str != null) {
@@ -2067,13 +2068,13 @@ public class GFString {
 	 *  根据词性标注进行分隔，一个关键词可能有多个词性标注，在分隔是视为一个整体。
 	 *  比如：团校/bs /sh 到 雅仕苑/bs /cm
 	 *  分隔后:
-	 *  团校/bs /sh 
-	 *  到 
+	 *  团校/bs /sh
+	 *  到
 	 *  雅仕苑/bs /cm
 	 * </pre>
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string[]
 	 */
 	public static String[] splitByPOS(String str) {
 		String[] result = null;
@@ -2099,9 +2100,9 @@ public class GFString {
 
 	/**
 	 * 得到一个汉字串对应的拼音.只把串的汉字进行转换,其它字符保持不变
-	 * 
-	 * @param cstr
-	 * @return
+	 *
+	 * @param cstr String
+	 * @return String
 	 */
 	public static String getBopomofo(String cstr) {
 		String bopomofo = null;
@@ -2148,10 +2149,10 @@ public class GFString {
 
 	/**
 	 * 按字典顺序对两个字符串进行比较
-	 * 
-	 * @param s1
-	 * @param s2
-	 * @return
+	 *
+	 * @param s1 string
+	 * @param s2 string
+	 * @return int
 	 */
 	public static int compareTo(String s1, String s2) {
 		if (s1 == null && s2 == null)
@@ -2185,10 +2186,10 @@ public class GFString {
 
 	/**
 	 * 根据ID号得到对应的GB汉字
-	 * 
+	 *
 	 * @param id
 	 *            0--6767
-	 * @return
+	 * @return string
 	 */
 	public static String getGB(int id) {
 		String result = null;
@@ -2247,7 +2248,7 @@ public class GFString {
 		return result;
 	}
 
-	 
+
 
 	public static String getTelcode(String telno) {
 		String head = null;
@@ -2279,11 +2280,12 @@ public class GFString {
 
 	/**
 	 * 得到该词性对应的词
-	 * 
+	 *
 	 * @param src
 	 *            源字符串
 	 * @param indexPos
 	 *            词性标记的位置
+	 * @return  string
 	 */
 	public static String getPosWord(String src, int indexPos) {
 		String result = null;
@@ -2304,13 +2306,13 @@ public class GFString {
 
 		return result;
 	}
- 
+
 
 	/**
 	 * 取得字符串中第一次出现的整数
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return string
 	 */
 	public static String getFirstInt(String str) {
 		String result = null;
@@ -2335,12 +2337,12 @@ public class GFString {
 
 	/**
 	 * 字符串当中是否含有无法显示的乱码
-	 * 
+	 *
 	 * GBK 亦采用双字节表示，总体编码范围为 8140-FEFE，首字节在 81-FE 之间，尾字节在 40-FE 之间，剔除 xx7F 一条线。总计
 	 * 23940 个码位，共收入 21886 个汉字和图形符号，其中汉字（包括部首和构件）21003 个，图形符号 883 个。
-	 * 
-	 * @param msg
-	 * @return
+	 *
+	 * @param msg string
+	 * @return true
 	 */
 	public static boolean hasDisorderChar(String msg) {
 		if (msg != null) {
@@ -2370,10 +2372,10 @@ public class GFString {
 
 	/**
 	 * 格式化时间成时分秒的形式
-	 * 
+	 *
 	 * @param millisTime
 	 *            毫秒数
-	 * @return
+	 * @return string
 	 */
 	public static String formatTime(long millisTime) {
 		StringBuffer sb = new StringBuffer();

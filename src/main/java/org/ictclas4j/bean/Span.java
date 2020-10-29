@@ -179,11 +179,11 @@ public class Span {
 
 	/**
 	 * 取得没有在dictUnknown中出现过的词的下一个位置
-	 * @param wrList
-	 * @param index
-	 * @param coreDict
-	 * @param unknownDict
-	 * @return
+	 * @param wrList array of wordresult
+	 * @param index int
+	 * @param coreDict Dict
+	 * @param unknownDict Dict
+	 * @return int
 	 */
 	public int getFrom(ArrayList<WordResult> wrList, int index, Dictionary coreDict, Dictionary unknownDict) {
 
@@ -207,8 +207,8 @@ public class Span {
 					e.printStackTrace();
 					this.m_nWordPosition[(i + 1)] = (this.m_nWordPosition[i] + this.m_sWords[i].getBytes().length);
 				}
-			}  
-			
+			}
+
 			// Record the position of current word
 			m_nStartPos = m_nWordPosition[i + 1];
 			// Move the Start POS to the ending
@@ -331,23 +331,23 @@ public class Span {
 
 	/**
 	 * <pre>
-	 *          
-	 *          BBCD 343 0.003606 
-	 *          BBC 2 0.000021 
-	 *          BBE 125 0.001314 
-	 *          BBZ 30 0.000315 
-	 *          BCD 62460 0.656624 
-	 *          BEE 0 0.000000 
-	 *          BE 13899 0.146116 
-	 *          BG 869 0.009136 
-	 *          BXD 4 0.000042 
-	 *          BZ 3707 0.038971 
-	 *          CD 8596 0.090367 
-	 *          EE 26 0.000273 
-	 *          FB 871 0.009157 
+	 *
+	 *          BBCD 343 0.003606
+	 *          BBC 2 0.000021
+	 *          BBE 125 0.001314
+	 *          BBZ 30 0.000315
+	 *          BCD 62460 0.656624
+	 *          BEE 0 0.000000
+	 *          BE 13899 0.146116
+	 *          BG 869 0.009136
+	 *          BXD 4 0.000042
+	 *          BZ 3707 0.038971
+	 *          CD 8596 0.090367
+	 *          EE 26 0.000273
+	 *          FB 871 0.009157
 	 *          Y 3265 0.034324
 	 *          XD 926 0.009735
-	 *          
+	 *
 	 *          The person recognition patterns set
 	 *          BBCD:姓+姓+名1+名2;
 	 *          BBE: 姓+姓+单名;
@@ -365,6 +365,8 @@ public class Span {
 	 *          XD: 姓双名首字成词+双名末字
 	 *          Y: 姓单名成词
 	 * </pre>
+	 * @param personDict personDict
+	 * @return true
 	 */
 	public boolean PersonRecognize(Dictionary personDict) {
 		String sPOS = "z";

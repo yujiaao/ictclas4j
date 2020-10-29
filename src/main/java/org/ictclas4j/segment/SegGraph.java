@@ -10,10 +10,10 @@ import org.ictclas4j.utility.Utility;
 
 /**
  * 分词图表，即二维表
- * 
+ *
  * @author sinboy
  * @since 2006.6
- * 
+ *
  */
 public class SegGraph {
 	private boolean isRowFirst;// 是否按行优先
@@ -67,9 +67,9 @@ public class SegGraph {
 
 	/**
 	 * 设置元素.如果能在图表中找到,重新设值.否则添加进去.
-	 * 
-	 * @param sg
-	 * @return
+	 *
+	 * @param sg segNode
+	 * @return true
 	 */
 	public boolean setElement(SegNode sg) {
 		if (sg != null) {
@@ -109,12 +109,12 @@ public class SegGraph {
 
 	/**
 	 * 得到所有列值为Col的元素
-	 * 
+	 *
 	 * @param curIndex
 	 *            当前索引值，表示列值或行值
 	 * @param isColFirst
 	 *            是否按列优先进行遍历
-	 * @return
+	 * @return array
 	 */
 	public ArrayList<SegNode> getNodes(int curIndex, boolean isColFirst) {
 		ArrayList<SegNode> result = null;
@@ -138,10 +138,9 @@ public class SegGraph {
 
 	/**
 	 * 把SegGraph插入的列表当中
-	 * 
-	 * @param snList
-	 * @param graph
-	 * @param isRowFirst
+	 *
+	 * @param graph graph
+	 * @param isRowFirst isRowFirst
 	 *            是否按行优先原则
 	 * @return 如果插入成功返回True,否则返回False
 	 */
@@ -230,11 +229,11 @@ public class SegGraph {
 
 		return result;
 	}
-	
+
 	public class NextElementIndex {
 		ArrayList <ArrayList<SegNode>> _index=new ArrayList <ArrayList<SegNode>> ();
-		
-		/**
+
+		/*
 		 * 利用索引得到下一个行值和该列值相等的所有元素。
 		 */
 		public ArrayList<SegNode> getNextElements(int curIndex) {
@@ -246,12 +245,12 @@ public class SegGraph {
 				} else return new ArrayList<SegNode>();
 			} else return null;
 		}
-		
-		
+
+
 		private void allocate_index_space() {
 			if (snList == null) return ;
 			int nMaxRow=-1;
-			
+
 			int nLen=snList.size();
 			for (int i=0;i<nLen;i++) {
 				SegNode sg = snList.get(i);
@@ -260,39 +259,38 @@ public class SegGraph {
 					nMaxRow=row;
 				}
 			}
-			
+
 			for (int j=0;j<=nMaxRow;j++) {
 				_index.add(new ArrayList<SegNode>());
 			}
 		}
-		
+
 		/**
-		 * 
+		 *
 		 *建立得到下一个行值和该列值相等的所有元素的索引
 		 */
-		public NextElementIndex() {			
+		public NextElementIndex() {
 			if (snList == null) return ;
 			allocate_index_space();
-			
+
 			int nLen=snList.size();
 			for (int i=0;i<nLen;i++) {
 				SegNode sg = snList.get(i);
-				int row=sg.getRow();				
-				
+				int row=sg.getRow();
+
 				//找到每一项的索引入口并加入当前项
 				ArrayList<SegNode> next_eles=_index.get(row);
 				next_eles.add(sg);
-			}									
-		}		
+			}
+		}
 	}
-	
+
 	/**
 	 * 得到下一个行值和该列值相等的所有元素。
-	 * 
-	 * @param snList
+	 *
 	 * @param curIndex
 	 *            当前元素的位置
-	 * @return
+	 * @return array
 	 */
 	public ArrayList<SegNode> getNextElements(int curIndex) {
 		ArrayList<SegNode> result = null;
@@ -360,7 +358,8 @@ public class SegGraph {
 
 	/**
 	 * 获取前一个词与当前词最匹配的词性位置
-	 * 
+	 * @param context context
+	 *
 	 */
 	public void getBestPrev(ContextStat context) {
 		if (snList != null) {

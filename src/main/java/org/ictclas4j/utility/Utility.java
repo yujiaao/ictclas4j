@@ -137,15 +137,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : CC_Generate
-	 * 
+	 *
 	 * Description: Generate the Chinese Char List file
-	 * 
-	 * 
-	 * Parameters : sFilename: the file name for the output CC List
-	 * 
-	 * Returns : public static boolean Author : Kevin Zhang History : 1.create 2002-1-8
+	 *
+	 *
+	 * @param fileName the file name for the output CC List
+	 *
+	 * @return public static boolean Author : Kevin Zhang History : 1.create 2002-1-8
 	 **************************************************************************/
 	public static boolean CC_Generate(String fileName) {
 		File file;
@@ -165,17 +165,17 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : CC_Find
-	 * 
+	 *
 	 * Description: Find a Chinese sub-string in the Chinese String
-	 * 
-	 * 
-	 * Parameters : string:Null-terminated string to search
-	 * 
-	 * strCharSet:Null-terminated string to search for
-	 * 
-	 * Returns : String Author : Kevin Zhang History : 1.create 2002-1-8
+	 *
+	 *
+	 * @param string Null-terminated string to search
+	 *
+	 * @param strCharSet  strCharSet:Null-terminated string to search for
+	 *
+	 * @return String Author : Kevin Zhang History : 1.create 2002-1-8
 	 **************************************************************************/
 	public static boolean CC_Find(final byte[] string, final byte[] strCharSet) {
 		if (string != null && strCharSet != null) {
@@ -188,15 +188,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : charType
-	 * 
+	 *
 	 * Description: Judge the type of sChar or (sChar,sChar+1)
-	 * 
-	 * 
-	 * Parameters : sFilename: the file name for the output CC List
-	 * 
-	 * Returns : int : the type of char Author : Kevin Zhang History : 1.create 2002-1-8
+	 *
+	 *
+	 * @param str  the file name for the output CC List
+	 *
+	 * @return int : the type of char Author : Kevin Zhang History : 1.create 2002-1-8
 	 **************************************************************************/
 	public static int charType(String str) {
 
@@ -233,15 +233,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : GetCCPrefix
-	 * 
+	 *
 	 * Description: Get the max Prefix string made up of Chinese Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-8
+	 *
+	 *
+	 * @param sSentence : sSentence: the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-8
 	 **************************************************************************/
 	public static int getCCPrefix(byte[] sSentence) {
 		int nLen = sSentence.length;
@@ -254,15 +254,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllSingleByte
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Single Byte Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param str the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllChinese(String str) {
 		if (str != null) {
@@ -289,15 +289,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllNonChinese
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Single Byte Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param sString  sSentence: the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return  the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllNonChinese(byte[] sString) {
 		int nLen = sString.length;
@@ -315,15 +315,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllSingleByte
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Single Byte Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param str  sSentence: the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return  the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllSingleByte(String str) {
 		if (str != null) {
@@ -347,15 +347,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllNum
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Num Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param str  the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllNum(String str) {
 
@@ -409,15 +409,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllIndex
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Index Num Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param sString the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllIndex(byte[] sString) {
 		int nLen = sString.length;
@@ -443,15 +443,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllLetter
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Letter Char
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param str  the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllLetter(String str) {
 		int i = 0;
@@ -479,15 +479,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllDelimiter
-	 * 
+	 *
 	 * Description: Judge the string is all made up of Delimiter
-	 * 
-	 * 
-	 * Parameters : sSentence: the original sentence which includes Chinese or Non-Chinese char
-	 * 
-	 * Returns : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
+	 *
+	 *
+	 * @param sString sSentence: the original sentence which includes Chinese or Non-Chinese char
+	 *
+	 * @return : the end of the sub-sentence Author : Kevin Zhang History : 1.create 2002-1-24
 	 **************************************************************************/
 	public static boolean isAllDelimiter(byte[] sString) {
 		int nLen = sString.length;
@@ -502,14 +502,15 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : BinarySearch
-	 * 
+	 *
 	 * Description: Lookup the index of nVal in the table nTable which length is nTableLen
-	 * 
-	 * Parameters : nPOS: the POS value
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-1-25
+	 *
+	 * @param val the POS value
+	 * @param table in[]
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-1-25
 	 **************************************************************************/
 	public static int binarySearch(int val, int[] table) {
 		if (table != null) {
@@ -532,14 +533,14 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsForeign
-	 * 
+	 *
 	 * Description: Decide whether the word is not a Non-fereign word
-	 * 
-	 * Parameters : sWord: the word
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-1-26
+	 *
+	 * @param word  the word
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-1-26
 	 **************************************************************************/
 	public static boolean isForeign(String word) {
 		if (word != null) {
@@ -552,14 +553,14 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsAllForeign
-	 * 
+	 *
 	 * Description: Decide whether the word is not a Non-fereign word
-	 * 
-	 * Parameters : sWord: the word
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-3-25
+	 *
+	 * @param sWord sWord: the word
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-3-25
 	 **************************************************************************/
 	public static boolean isAllForeign(String sWord) {
 		int nForeignCount = getForeignCharCount(sWord);
@@ -569,14 +570,14 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : IsForeign
-	 * 
+	 *
 	 * Description: Decide whether the word is Chinese Num word
-	 * 
-	 * Parameters : sWord: the word
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-1-26
+	 *
+	 * @param word : sWord: the word
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-1-26
 	 **************************************************************************/
 	public static boolean isAllChineseNum(String word) {// 百分之五点六的人早上八点十八分起床
 
@@ -604,14 +605,14 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : GetForeignCharCount
-	 * 
+	 *
 	 * Description:
-	 * 
-	 * Parameters : sWord: the word
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-4-4 2.Modify 2002-5-21
+	 *
+	 * @param sWord  the word
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-4-4 2.Modify 2002-5-21
 	 **************************************************************************/
 	public static int getForeignCharCount(String sWord) {
 		int nForeignCount, nCount;
@@ -630,10 +631,10 @@ public class Utility {
 
 	/**
 	 * 得到字符集的字符在字符串中出现的次数
-	 * 
-	 * @param charSet
-	 * @param word
-	 * @return
+	 *
+	 * @param charSet string
+	 * @param word string
+	 * @return int
 	 */
 	public static int getCharCount(String charSet, String word) {
 		int nCount = 0;
@@ -651,14 +652,14 @@ public class Utility {
 	}
 
 	/***************************************************************************
-	 * 
+	 *
 	 * Func Name : GetForeignCharCount
-	 * 
+	 *
 	 * Description: Return the foreign type
-	 * 
-	 * Parameters : sWord: the word
-	 * 
-	 * Returns : the index value Author : Kevin Zhang History : 1.create 2002-4-4 2.Modify 2002-5-21
+	 *
+	 * @param sWord sWord: the word
+	 *
+	 * @return the index value Author : Kevin Zhang History : 1.create 2002-4-4 2.Modify 2002-5-21
 	 **************************************************************************/
 	public int GetForeignType(String sWord) {
 		int nForeignCount, nCount, nType = TT_ENGLISH;
@@ -750,9 +751,9 @@ public class Utility {
 
 	/**
 	 * 比较第二个字节数组是否在第一个中出现
-	 * 
-	 * @param b1
-	 * @param b2
+	 *
+	 * @param b1 byte[]
+	 * @param b2 byte[]
 	 * @return 返回第一次出现在位置。如果没有出现，则返回－1
 	 */
 	public static int strstr(byte[] b1, byte[] b2) {
@@ -795,11 +796,12 @@ public class Utility {
 
 	/**
 	 * 比较两个字节数组前len个字节是否相等
-	 * 
-	 * @param b1
-	 * @param b2
-	 * @param len
-	 * @return
+	 *
+	 * @param b1  byte
+	 * @param b2 int
+	 * @param len int
+	 * @param startIndex int
+	 * @return true
 	 */
 	public static boolean strncmp(byte[] b1, int startIndex, byte[] b2, int len) {
 		if (b1 != null && b2 != null && len > 0) {
@@ -832,6 +834,8 @@ public class Utility {
 
 	/**
 	 * 汉字在6768区位表中对应的ID号
+	 * @param str string
+	 * @return  int
 	 */
 	public static int CC_ID(String str) {
 		int result = -1;
@@ -850,9 +854,9 @@ public class Utility {
 
 	/**
 	 * The first char computed by the Chinese Char ID
-	 * 
-	 * @param id
-	 * @return
+	 *
+	 * @param id int
+	 * @return int
 	 */
 	public static int CC_CHAR1(int id) {
 		return (id) / 94 + 176;
@@ -860,9 +864,9 @@ public class Utility {
 
 	/**
 	 * The second char computed by the Chinese Char ID
-	 * 
-	 * @param id
-	 * @return
+	 *
+	 * @param id int
+	 * @return int
 	 */
 	public static int CC_CHAR2(int id) {
 		return (id) % 94 + 161;
@@ -903,10 +907,10 @@ public class Utility {
 
 	/**
 	 * 根据ID号得到对应的GB汉字
-	 * 
+	 *
 	 * @param id
 	 *          0--6767
-	 * @return
+	 * @return String
 	 */
 	public static String getGB(int id) {
 		String result = null;
@@ -956,9 +960,9 @@ public class Utility {
 
 	/**
 	 * 判断字符串是否是年份
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param snum  number
+	 * @return true
 	 */
 	public static boolean isYearTime(String snum) {
 		if (snum != null) {
@@ -986,12 +990,12 @@ public class Utility {
 
 	/**
 	 * 判断一个字符串的所有字符是否在另一个字符串集合中
-	 * 
+	 *
 	 * @param aggr
 	 *          字符串集合
 	 * @param str
 	 *          需要判断的字符串
-	 * @return
+	 * @return true
 	 */
 	public static boolean isInAggregate(String aggr, String str) {
 		if (aggr != null && str != null) {
@@ -1009,9 +1013,9 @@ public class Utility {
 
 	/**
 	 * 判断该字符串是否是半角字符
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str String
+	 * @return true
 	 */
 	public static boolean isDBCCase(String str) {
 		if (str != null) {
@@ -1037,9 +1041,9 @@ public class Utility {
 
 	/**
 	 * 判断该字符串是否是全角字符
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str string
+	 * @return true
 	 */
 	public static boolean isSBCCase(String str) {
 		if (str != null) {
@@ -1065,9 +1069,9 @@ public class Utility {
 
 	/**
 	 * 判断是否是一个连字符（分隔符）
-	 * 
-	 * @param str
-	 * @return
+	 *
+	 * @param str String
+	 * @return true
 	 */
 	public static boolean isDelimiter(String str) {
 		if (str != null && ("-".equals(str) || "－".equals(str)))
